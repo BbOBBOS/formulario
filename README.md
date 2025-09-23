@@ -62,3 +62,15 @@ Um projeto de demonstração que mostra como construir um **formulário robusto,
 - Strict-Transport-Security
 - Permissions-Policy bloqueando câmera/microfone
 - CSP com script-src 'self' https://cdn.jsdelivr.net 
+
+## Dependências
+- Instalação via Composer:
+```php
+composer require guzzlehttp/guzzle
+ ```
+
+## Melhorias Implementadas
+
+- Sanitização de Acentos
+- Consulta CEP Backend: Guzzle com 3 tentativas e timeout.
+- Normaliza rua, cidade, UF de acordo com resposta oficial.
