@@ -117,7 +117,66 @@
     </form>
   </div>
 
-  <script>
+<script>
+  // Pega o token CSRF que já usamos no form
+  const csrfToken = () => document.getElementById('csrf_token')?.value || '';
+
+  async function buscarCEPviaPHP(cep) {
+    const body = new URLSearchParams();
+    body.set('cep', cep);
+    body.set('csrf_token', csrfToken());
+
+    const resp = await fetch('cep.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString(),
+      credentials: 'same-origin'
+    });
+
+    if (!resp.ok) {
+      return { ok: false, error: `HTTP ${resp.status}` };
+    }
+    return await resp.json();
+  }
+
+  const cepEl = document.getElementById('cep');
+  const ruaEl = document.getElementById('rua');
+  const cidadeEl = document.getElementById('cidade');
+  const estadoEl = document.getElementById('estado');
+  const form = document.getElementById('formCadastro');
+
+  cepEl.addEventListener('blur', async (e) => {
+    const cepNum = e.target.value.replace(/\D/g, '');
+    if (cepNum.length !== 8) return;
+
+    // UX: trava campos enquanto busca
+    [ruaEl, cidadeEl, estadoEl].forEach(el => el.setAttribute('readonly', 'readonly'));
+
+    try {
+      const result = await buscarCEPviaPHP(cepNum);
+      if (result.ok) {
+        const d = result.data || {};
+        // Preenche/normaliza
+        ruaEl.value = d.logradouro || ruaEl.value;
+        cidadeEl.value = d.localidade || '';
+        estadoEl.value = (d.uf || '').toUpperCase();
+
+        // Limpa erros visuais se houver
+        [cepEl, ruaEl, cidadeEl, estadoEl].forEach(el => el.setCustomValidity(''));
+        form?.classList.remove('was-validated');
+      } else {
+        // Marca erro visual no CEP
+        cepEl.setCustomValidity('CEP inválido ou indisponível.');
+        form?.classList.add('was-validated');
+      }
+    } catch {
+      cepEl.setCustomValidity('Falha ao consultar CEP.');
+      form?.classList.add('was-validated');
+    } finally {
+      [ruaEl, cidadeEl, estadoEl].forEach(el => el.removeAttribute('readonly'));
+    }
+  });
+
     // —————————————— CSRF (double-submit cookie) ——————————————
     (function ensureCsrf() {
       function randToken() {
@@ -188,6 +247,7 @@
     const salarioEl = document.getElementById('salario');
     salarioEl.addEventListener('input', e => e.target.value = maskCurrencyBR(e.target.value));
 
+/*
     // —————————————— Auto-preencher endereço via ViaCEP (front) ——————————————
     document.getElementById('cep').addEventListener('blur', async (e) => {
       const cep = e.target.value.replace(/\D/g,'');
@@ -201,7 +261,7 @@
         document.getElementById('cidade').value = data.localidade || '';
         document.getElementById('estado').value = (data.uf || '').toUpperCase();
       } catch {}
-    });
+    });*/
   </script>
 </body>
 </html>
